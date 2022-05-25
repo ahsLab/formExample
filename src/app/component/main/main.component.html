@@ -1,0 +1,73 @@
+<div class="mb-2 form-check fixed-top">
+    <button type="button" (click)="SatirEkle()" class="btn btn-info">Satır Ekle</button>
+    <button type="submit" class="btn btn-primary">Oluştur</button>
+    <button type="submit " class="btn btn-primary">Önizleme</button>
+</div>
+<div class="container" id="coll">
+
+<div >
+    <label for="">BAŞLIK ALANI</label>
+    <div class="mb-2">
+        <input type="text" class="form-control center" placeholder="Form İçin Bir Başlık Ekleyiniz...">
+    </div>
+
+</div>
+<label for="">İçerikler</label>
+<div cdkDropList class="cdk-drop-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let movie of listItems" cdkDrag>
+        <div class="row align-items-center" id="coll" style="background-color: rgb(155, 210, 247); margin-top: 10px;">
+
+            <div class="col">
+                <input type="text" placeholder="Form İçin Bir Başlık Ekleyiniz..." class="form-control">
+            </div>
+            <div class="col">
+                <span class="form-text">
+                    lütfen Görünmesini istediğiniz Metni yazınız.(Örn: Adı)
+                </span>
+            </div>
+            <div class="col col-lg-2">
+                <button type="button" style="margin: 5px;" class="btn btn-danger">Satırı Sil</button>
+            </div>
+            <!-- Example single danger button -->
+            <div class="btn-group">
+                <div class="col">
+
+                    <select class=" btn btn-info dropdown-toggledropdown-menu">
+                        <option ng-repeat="x in names">Hizalama</option>
+                        <option ng-repeat="x in names">Sola Hizala</option>
+                        <option ng-repeat="x in names">Sağa Sağa</option>
+                        <option ng-repeat="x in names">Ortala</option>
+                    </select>
+
+                </div>
+                <div class="col">
+                    <select class=" btn btn-info dropdown-toggledropdown-menu">
+                        <option ng-repeat="x in names">Yazı Fontu</option>
+                        <option ng-repeat="x in names">Normal</option>
+                        <option ng-repeat="x in names">Kalın</option>
+                        <option ng-repeat="x in names">Altı çizili</option>
+                    </select>
+                </div>
+                <div class="col mr-2">
+                    <select class=" btn btn-info dropdown-toggledropdown-menu">
+                        <option ng-repeat="x in names">Tipi</option>
+                        <option ng-repeat="x in names">Paragraf</option>
+                        <option ng-repeat="x in names">Tarih</option>
+                        <option ng-repeat="x in names">Çoktan Seçmeli</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class=" btn btn-info dropdown-toggledropdown-menu">
+                        <option ng-repeat="x in names">Satır Aralığı</option>
+                        <option ng-repeat="x in names">Varsayılan (1 satır)</option>
+                        <option ng-repeat="x in names">1.5 Satır</option>
+                        <option ng-repeat="x in names">5 Satır</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
