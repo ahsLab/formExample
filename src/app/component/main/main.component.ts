@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { HtmlElementsComponent } from 'src/app/htmlModels/html-elements/html-elements.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { FormItem } from 'src/app/htmlModels/formItem';
@@ -10,6 +10,7 @@ import { FormItem } from 'src/app/htmlModels/formItem';
 })
 export class MainComponent implements OnInit {
   listItems:Array<FormItem>=[]
+
   constructor(private elementRef:ElementRef) { }
 
   ngOnInit(): void {
@@ -17,10 +18,13 @@ export class MainComponent implements OnInit {
   }
   drop(event: CdkDragDrop<{title: string; poster: string}[]>) {
     moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);
+    console.log(event.previousIndex);
+    console.log(event.currentIndex);
+    
   }
   SatirEkle()
   {
-    let a= new HtmlElementsComponent()
+    
     let customObj = new FormItem(
       "Episode I ","fgdfgdgfdg","","","",""
     );
