@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "formexapm": {
+      "hosting": {
+        "formExample": [
+          "formexapm"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "formexapm"
+  }
+}

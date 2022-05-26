@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+ 
+  @Output() ItemEvent=new EventEmitter();
+  @Output() InputEvent=new EventEmitter();
+  @Output() TimeEvent=new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
+AddInput()
+{
+  this.ItemEvent.emit()
+  
+}
+AddChecBox()
+{
+  this.InputEvent.emit()
+}
+AddTime()
+{
+  this.TimeEvent.emit()
 
+}
 }

@@ -1,5 +1,4 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { HtmlElementsComponent } from 'src/app/htmlModels/html-elements/html-elements.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { FormItem } from 'src/app/htmlModels/formItem';
 
@@ -10,7 +9,8 @@ import { FormItem } from 'src/app/htmlModels/formItem';
 })
 export class MainComponent implements OnInit {
   listItems:Array<FormItem>=[]
-
+  
+  baslik:string=""
   constructor(private elementRef:ElementRef) { }
 
   ngOnInit(): void {
@@ -24,17 +24,38 @@ export class MainComponent implements OnInit {
   }
   SatirEkle()
   {
-    
+
     let customObj = new FormItem(
-      "Episode I ","fgdfgdgfdg","","","",""
+      "Satır","fgdfgdgfdg","","","",""
     );
     
     this.listItems.push(customObj)
       
-    
   }
 
+  InputAdd()
+  {
+    let customObj = new FormItem(
+      "Onay Kutusu","fgdfgdgfdg","","","",""
+    );
+    
+    this.listItems.push(customObj)
+  }
+  TimeAdd()
+  {
+    let customObj = new FormItem(
+      "Tarih Alanı","fgdfgdgfdg","left","","",""
+    );
+    
+    this.listItems.push(customObj)
+  }
+  OnChange(e:Event,id:string,type:string)
+  {
 
-  
+  }
+  Delete(id:string)
+  {
+
+  }
 
 }
